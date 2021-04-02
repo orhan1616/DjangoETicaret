@@ -1,0 +1,59 @@
+{% extends "homebase.html" %}
+
+{% load static %}
+{% block title %} {{ category.name }}Contact {% endblock %}
+{% block body %}
+
+    <div class="container">
+            <div class="breadcrumbs">
+                <ol class="breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li class="active">Contact</li>
+                </ol>
+            </div><!--/breadcrums-->
+
+
+
+<div id="contact-page" class="container">
+    	<div class="bg">
+    		<div class="row">
+	    		<div class="col-sm-8">
+	    			<div class="contact-form">
+	    				<h2 class="title text-center">Get In Touch</h2>
+
+                        <div>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{{ message.tags }}" role="alert">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        <form action="/contact" method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input type="submit" value="SEND FORM">
+                        </form>
+                        </div>
+
+	    			</div>
+	    		</div>
+	    		<div class="col-sm-4">
+	    			<div class="contact-info">
+	    				<h2 class="title text-center">Contact Info</h2>
+	    				<address>
+	    					<p>E-Shopper Inc.</p>
+							<p>ANKARA TURKEY</p>
+							<p>Mobile: +2586 17 38 93</p>
+							<p>Fax: 1-714-252-0026</p>
+							<p>Email: yasemin.dn7@gmail.com</p>
+	    				</address>
+	    			</div>
+    			</div>
+	    	</div>
+    	</div>
+    </div><!--/#contact-page-->
+
+
+<br>
+{% endblock %}
