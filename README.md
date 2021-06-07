@@ -1,2 +1,2 @@
 # PythonETicaret
-Python ile E-Ticaret Sitesi
+Django ile E-Ticaret Sitesi
